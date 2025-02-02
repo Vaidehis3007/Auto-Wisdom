@@ -3,14 +3,14 @@ import Link from 'next/link'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 
 export const metadata: Metadata = {
-  title: 'Auto Wisdom - Your Car Knowledge Hub',
+  title: 'Auto Wisdom',
   description: 'Discover and compare cars with detailed specifications and 3D viewing capabilities',
 }
 
 export default function Home() {
   return (
     <main className="container mx-auto px-4 py-8">
-      <Card className="bg-gradient-to-r from-blue-500 to-blue-700">
+      <Card className="bg-gradient-to-r from-teal-500 to-teal-700">
         <CardHeader>
           <CardTitle className="text-4xl font-bold text-white text-center">
             Welcome to Auto Wisdom
