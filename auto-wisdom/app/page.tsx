@@ -20,7 +20,7 @@ export default function Home() {
           <p className="text-xl mb-6">
             Your destination for comprehensive car information and comparisons
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-rows-1 md:grid-rows-2 lg:grid-rows-3 gap-6">
             <Link 
               href="/cars" 
               className="bg-white/10 p-6 rounded-lg hover:bg-white/20 transition-colors"
