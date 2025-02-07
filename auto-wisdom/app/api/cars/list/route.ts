@@ -33,17 +33,6 @@ const cars = [
   },
 ];
 
-export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
-  const { id } = await params;
-
-  const car = cars.find((car) => car.id === parseInt(id));
-
-  if (!car) {
-    return NextResponse.json({ error: 'Car not found' }, { status: 404 });
-  }
-
-  return NextResponse.json(car);
+export async function GET() {
+  return NextResponse.json(cars);
 }

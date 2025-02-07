@@ -85,7 +85,7 @@ export default function BrowsePage() {
           return (
             <div
               key={car.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+              className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-lg"
             >
               {/* Car Image */}
               <img
