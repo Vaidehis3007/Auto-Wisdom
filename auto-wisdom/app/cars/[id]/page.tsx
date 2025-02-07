@@ -1,40 +1,11 @@
 import Link from 'next/link';
 
 export default async function CarDetails({ params }: { params: { id: string } }) {
-  const { id } = params;
-
- 
-  const cars = [
-    { id: 1,
-      name: 'BMW 3 Series',
-      description: 'Luxury sedan with advanced features.',
-      basePrice: '$41,250',
-      discount: '$1,750',
-      estimatedTax: '$3,300',
-      documentationFee: '$500',
-      imageUrl: './images/bmw.jpg' },
-    { id: 2,
-      name: 'Tesla Model S',
-      description: 'Electric luxury sedan with autopilot.',
-      basePrice: '$80,000',
-      discount: '$2,000',
-      estimatedTax: '$6,400',
-      documentationFee: '$1,000',
-      imageUrl: './images/tesla.jpg' },
-    { id: 3,
-      name: 'Ford Mustang',
-      description: 'Reliable and efficient sedan.',
-      basePrice: '$30,000',
-      discount: '$1,000',
-      estimatedTax: '$2,400',
-      documentationFee: '$300',
-      imageUrl: './images/ford.jpg'},
-  ];
-
+  const res = await fetch(`http://localhost:3000/api/cars/${params.id}`);
+  const car = await res.json();
   
-  const car = cars.find((car) => car.id === parseInt(id));
 
-  if (!car) {
+  if (!car || res.status === 404) {
     return (
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-red-600">Car not found!</h1>

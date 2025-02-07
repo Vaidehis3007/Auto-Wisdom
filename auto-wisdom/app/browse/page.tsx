@@ -77,8 +77,7 @@ export default function BrowsePage() {
           <span>Back to Home</span>
         </Link>
       </div>
-
-      <h1 className="text-4xl font-bold text-teal-700 mb-8">Featured Cars</h1>
+      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {cars.map((car) => {
           const total = calculateTotal(car); // Calculate total for each car
