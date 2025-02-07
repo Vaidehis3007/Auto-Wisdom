@@ -10,6 +10,15 @@ const cars = [
     estimatedTax: 3300,
     documentationFee: 500,
     imageUrl: '/images/bmw-3-series.jpg',
+    specs: {
+      horsepower: 255,
+      torque: 295,
+      acceleration: 5.6,
+      topSpeed: 155,
+      fuelEconomy: 26,
+      range: 460,
+      weight: 3582
+    }
   },
   {
     id: 2,
@@ -20,6 +29,15 @@ const cars = [
     estimatedTax: 6400,
     documentationFee: 1000,
     imageUrl: '/images/tesla-model-s.jpg',
+    specs: {
+      horsepower: 670,
+      torque: 720,
+      acceleration: 3.1,
+      topSpeed: 155,
+      fuelEconomy: 120,
+      range: 405,
+      weight: 4561
+    }
   },
   {
     id: 3,
@@ -30,6 +48,15 @@ const cars = [
     estimatedTax: 2400,
     documentationFee: 300,
     imageUrl: '/images/ford-mustang.jpg',
+    specs: {
+      horsepower: 310,
+      torque: 350,
+      acceleration: 5.1,
+      topSpeed: 155,
+      fuelEconomy: 22,
+      range: 380,
+      weight: 3730
+    }
   },
 ];
 
