@@ -10,6 +10,7 @@ const cars = [
     estimatedTax: 3300,
     documentationFee: 500,
     imageUrl: '/images/bmw-3-series.jpg',
+    modelId:"82534fdddd7e46e4bdb202d6c1d3c0e7",
     specs: {
       horsepower: 255,
       torque: 295,
@@ -29,6 +30,7 @@ const cars = [
     estimatedTax: 6400,
     documentationFee: 1000,
     imageUrl: '/images/tesla-model-s.jpg',
+    modelId: "5c0f22e3cbc24c89879fadaa440c350f",
     specs: {
       horsepower: 670,
       torque: 720,
@@ -48,6 +50,7 @@ const cars = [
     estimatedTax: 2400,
     documentationFee: 300,
     imageUrl: '/images/ford-mustang.jpg',
+    modelId: "5f4e3965f79540a9888b5d05acea5943",
     specs: {
       horsepower: 310,
       torque: 350,

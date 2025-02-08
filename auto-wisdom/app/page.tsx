@@ -1,11 +1,18 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import LoadingSpinner from '@/components/LoadingSpinner';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Auto Wisdom',
   description: 'Discover and compare cars with detailed specifications and 3D viewing capabilities',
 };
+
+const CarViewer = dynamic(() => import('@/components/CarViewer'), {
+  loading: () => <LoadingSpinner />
+});
 
 export default function Home() {
   return (

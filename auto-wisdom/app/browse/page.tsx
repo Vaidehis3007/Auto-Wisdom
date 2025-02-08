@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
+import CarViewerSection from "@/components/CarViewerSection";
 
 export default function BrowsePage() {
   const [selectedCar, setSelectedCar] = useState<number | null>(null);
@@ -16,6 +17,7 @@ export default function BrowsePage() {
       estimatedTax: 3300,
       documentationFee: 500,
       imageUrl: '/images/bmw.jpg',
+      modelId: "your-bmw-model-id"
     },
     {
       id: 2,
@@ -26,6 +28,7 @@ export default function BrowsePage() {
       estimatedTax: 6400,
       documentationFee: 1000,
       imageUrl: '/images/tesla.jpg',
+      modelId: "your-tesla-model-id"
     },
     {
       id: 3,
@@ -36,6 +39,7 @@ export default function BrowsePage() {
       estimatedTax: 2400,
       documentationFee: 300,
       imageUrl: '/images/ford.jpg',
+      modelId: "5f4e3965f79540a9888b5d05acea5943"
     },
   ];
 
@@ -122,8 +126,9 @@ export default function BrowsePage() {
       {/* Modal for Car Details */}
       {selectedCar !== null && (
         <div 
-        onClick={handleOutsideClick}
-        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
+          onClick={handleOutsideClick}
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4"
+        >
           <div className="bg-white rounded-lg shadow-lg w-full max-w-2xl p-6">
             <h2 className="text-2xl font-bold text-teal-700 mb-4">
               {cars.find((car) => car.id === selectedCar)?.name}
@@ -163,12 +168,20 @@ export default function BrowsePage() {
                 </span>
               </div>
             </div>
-            <button
-              onClick={closeModal}
-              className="mt-6 px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition-colors"
-            >
-              Close
-            </button>
+            <div className="mt-6 flex space-x-4">
+              <button
+                onClick={closeModal}
+                className="px-4 py-2 bg-teal-500 text-white rounded hover:bg-teal-600 transition-colors"
+              >
+                Close
+              </button>
+              <Link
+                href={`/cars/${selectedCar}/3d-model`}
+                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+              >
+                Explore 3D Model
+              </Link>
+            </div>
           </div>
         </div>
       )}
