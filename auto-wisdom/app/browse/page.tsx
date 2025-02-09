@@ -77,7 +77,7 @@ export default function BrowsePage() {
           href="/"
           className="flex items-center text-teal-500 hover:text-teal-600 transition-colors"
         >
-          <ArrowLeft className="mr-2" /> {/* Arrow icon */}
+          <ArrowLeft className="mr-2" /> 
           <span>Back to Home</span>
         </Link>
       </div>

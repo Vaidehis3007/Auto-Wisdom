@@ -12,9 +12,11 @@ export default function CarViewer({modelId}: CarViewerProps) {
   useEffect(() => {
     if (!containerRef.current) return;
 
+    containerRef.current.innerHTML = '';
+
     const iframe = document.createElement('iframe');
     iframe.title = "Ford Mustang Dark Horse 2024";
-    iframe.allow = " fullscreen; xr-spatial-tracking";
+    iframe.allow = "autoplay; fullscreen; xr-spatial-tracking; vr";
     iframe.src = `https://sketchfab.com/models/${modelId}/embed`;
     iframe.style.width = "100%";
     iframe.style.height = "100%";
@@ -31,24 +33,6 @@ export default function CarViewer({modelId}: CarViewerProps) {
 
     containerRef.current.appendChild(iframe);
 
-    // let viewer: any;
-    
-    // window.addEventListener('load', () => {
-    //   // @ts-ignore
-    //   if (window.Sketchfab) {
-    //     // @ts-ignore
-    //     viewer = new window.Sketchfab(iframe);
-    //     viewer.init('5f4e3965f79540a9888b5d05acea5943', {
-    //       autostart: 1,
-    //       ui_controls: 1,
-    //       ui_infos: 1,
-    //       ui_inspector: 0,
-    //       ui_stop: 0,
-    //       ui_watermark: 1,
-    //       ui_fullscreen: 1,
-    //     });
-    //   }
-    // });
 
     return () => {
       if (containerRef.current && containerRef.current.contains(iframe)) {
@@ -58,7 +42,7 @@ export default function CarViewer({modelId}: CarViewerProps) {
   }, [modelId]);
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="w-full h-full relative">
       <div ref={containerRef} className="absolute inset-0" />
     </div>
   );

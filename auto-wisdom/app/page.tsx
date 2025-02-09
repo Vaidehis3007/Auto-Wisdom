@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
+import ProtectedRoute from '@/components/ProtectedRoute';
 
 export const metadata: Metadata = {
   title: 'Auto Wisdom',
@@ -16,6 +17,7 @@ const CarViewer = dynamic(() => import('@/components/CarViewer'), {
 
 export default function Home() {
   return (
+    <ProtectedRoute>
     <main className="container mx-auto px-4 py-8">
       <Card className="bg-gradient-to-r from-teal-500 to-teal-700">
         <CardHeader>
@@ -53,5 +55,6 @@ export default function Home() {
         </CardContent>
       </Card>
     </main>
+    </ProtectedRoute>
   );
 }
